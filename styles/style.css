@@ -1,0 +1,256 @@
+
+body{
+	background-color: #353535;
+}
+
+#slice{
+	position: absolute; 
+	top: 130px; 
+	left: 125px;
+	z-index: 2;
+	transform: scale(3) scaleX(-1);
+}
+
+#display{
+	position: absolute; 
+	top: 30px; 
+	left: 25px;
+	z-index: 3;
+	border: 2px solid black;
+}
+
+#displayBg{
+	position: absolute; 
+	z-index: 1;
+	background-color: black;
+	border: 3px solid #2861bf; 
+	border-radius: 2px 2px 8px 8px;
+}	
+
+#objectiveSign{
+	background: rgb(40, 97, 191, 0.25); 
+	color: white; 
+	width: 350px;
+	padding: 5px; 
+	position: absolute; 
+	z-index: 5; 
+	top: -68px;
+	border: 1px solid white;
+	border-radius: 8px 8px 2px 2px;
+}
+
+#sectorIcon{
+	width: 20px;
+}
+
+#probeIcon{
+	width: 20px;
+}
+
+#apicalStatus{
+	color: red;
+	padding: 2px 5px 2px 5px;
+}
+
+#probeStatus{
+	color: red;
+	padding: 2px 5px 2px 5px;
+}
+
+#status{
+	position: absolute;
+	left: 8px; 
+	top: 8px;  
+	z-index: 4;
+	border: 1px solid rgb(40, 97, 191, 0.5);
+	border-radius: 5px;
+	font-size: small;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.status-text{
+	float: right; 
+	padding-left: 10px
+}
+
+#loading{
+	width: 240px;
+	height: 240px;
+	top: -120px; 
+	left: -120px;
+	position: absolute;
+}
+
+#heartBox {
+	width: 240px;
+	height: 240px;
+	position: absolute;
+}
+
+#resultButtons.show{
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	height: 45px;
+}
+
+#resultButtons.hide{
+	border-top: 0 solid white;
+	border-left: 0 solid white;
+	border-right: 0 solid white;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	height: 0;
+}
+
+.feedback-text{
+	border: 1px solid white; 
+	border-radius: 5px;
+	padding-bottom: 4px; 
+	background: rgb(40, 97, 191, 0.25); 
+	width: 100%;
+}
+
+.human-heart {
+	animation: .8s infinite beatHeart;
+}
+
+@keyframes beatHeart {
+	0% {
+		transform: scale(1);
+	}
+	25% {
+		transform: scale(1.1);
+	}
+	40% {
+		transform: scale(1);
+	}
+	60% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+button {
+	border: 1px solid white;
+	border-radius: 15px;
+	width: 90px;
+	height: 30px;
+	font-size: 12px;
+	cursor: pointer;
+	outline: 0;
+	transition: background-color 0.2s ease-in-out;
+}
+
+/* Button styling */
+#tryAgain{
+	background-color: #f2373d; 
+	color: white;
+	margin: 7px 0 4px 6px;
+}
+
+#accept {
+	background-color: #f2373d2a; 
+	color: white;
+	margin: 7px 0 4px 0;
+	cursor: not-allowed;
+}
+
+#accept:hover, #tryAgain:hover {
+	background-color: #c51b1e; 
+}
+
+#correct{
+	background-color: rgba(14, 206, 14, 0.25); 
+	color: white;
+	margin: 7px 6px 4px 0;
+}
+
+#correct:hover {
+	background-color: rgba(11, 99, 11, 0.562);
+}
+
+#gui{
+	position:absolute;
+	transition: opacity 0.3s ease-in-out;
+}
+
+#gui.hide{
+	opacity: 0;
+	z-index:-2;
+}
+
+#gui.show{
+	opacity: 0.8;
+	z-index: 1;
+}
+
+#qr{
+	border:1px solid white; 
+	border-radius: 2px; 
+	background-color: rgba(10,170,50,0.8); 
+	color: white; 
+	position: relative; 
+	float: right; 
+	padding: 5px;
+}
+
+#qr:hover{
+	cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+	min-height: 40%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+#gui.hide{
+	opacity: 0;
+	z-index:-2;
+}
+
+#gui.show{
+	opacity: 0.8;
+	z-index: 1;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#353535">
+	<title>Apical Viewer</title>
+
+	<!-- w3.css -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<!-- Font awesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+	 crossorigin="anonymous">
+
+	<!--own stylesheet-->
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="stylesheet" media='screen and (min-width: 723px)' href="./styles/layoutLarge.css">
+	<link rel="stylesheet" media='screen and (max-width: 722px)' href="./styles/layoutSmall.css">
+
+</head>
+
+<body>
+
+	<footer id="footer">
+		Version: 1.0.0, Author: Robin Jacobsson 2018
+	</footer>
+
+	<!-- Mobile check -->
+	<div id="mobile_check"></div>
+
+	<!-- Graphics for the probe UI -->
+	<div id="mobile_probe" style="display: none"></div>
+
+	<!-- Loading view -->
+	<div id="loadingScreen" style="position: absolute; top: 50%; left: 50%"></div>
+
+	<div id="simulator" style="visibility: hidden">
+		<!-- Body view -->
+		<div id="bodyView" class="body-view"></div>
+
+		<!-- Slice view -->
+		<div id="viewport">
+			<div id="slicePos">
+				<div id="objectiveSign">
+					<center>
+						<h4>Find the Apical Four Chamber View</h4>
+					</center>
+				</div>
+				<div id="status">
+					<div id="apicalStatus"><i id="sectorIcon" class="far fa-eye-slash"></i> Apical Window</div>
+					<div id="probeStatus"><i id="probeIcon" class="fas fa-hand-paper"></i> Probe Grab</div>
+				</div>
+				<canvas id="displayBg" width="345" height="350"></canvas>
+				<canvas id="slice" width="100" height="100"></canvas>
+				<canvas id="display" width="300" height="300"></canvas>
+			</div>
+		</div>
+
+		<!-- probe GUI container -->
+		<div id="gui" class="show"></div>
+
+		<!-- <button id="qr" class="show">QR-Code</button> -->
+
+		<!-- The Modal -->
+		<!-- <div id="myModal" class="modal">
+
+				
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<center><div id="qrcode"></div></center>
+				</div>
+			</div> -->
+
+
+		<div id="result" class="hide">
+			<center>
+				<h4 class="feedback-text">Feedback</h4>
+			</center>
+			<div id="orientationText">Orientation:</div>
+			<div id="orientation"></div>
+			<div id="positionText">Position:</div>
+			<div id="position"></div>
+		</div>
+
+		<div id="resultButtons" class="hide">
+			<div style="float:left">
+				<button id="tryAgain"><i class="fas fa-redo-alt"></i> Retry</button>
+				<button id="accept"><i class="fas fa-check-double"></i> Accept</button>
+			</div>
+			<div style="float:right">
+				<button id="correct"><i class="fas fa-check-circle"></i> Correct</button>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- The application JavaScript code -->
+	<!-- <script src="node_modules/@hughsk/fulltilt/dist/fulltilt.min.js"></script>
+		<script src="js/mobileCheck.js"></script>-->
+	<script src="./mobileCheck.js"></script>
+	<!-- <script src="./qrcode.js" async></script> -->
+	<script src="./js/lib/fulltilt.js"></script>
+	<!-- <script src="js/main.js"></script> -->
+</body>
+
+</html>

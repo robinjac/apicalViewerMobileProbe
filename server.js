@@ -1,34 +1,40 @@
 const express = require('express'),
-	path = require('path'),
 	app = express(),
 	server = require('http').Server(app),
-	io = require('socket.io')(server),
-	ip = require('ip').address();
-	
-	app.use(express.static(path.join(__dirname, 'website')));
-	
-	io.on('connection', function(socket){
-		
-		socket.on('desktop connect', function(data){
-			socket.join(data.room);
-			socket.nsp.to(data.room).emit('ip',ip);
-		});
-		
-		socket.on('probe connect', function(data){
-			socket.join(data.room);
-			socket.to(data.room).emit('probe connected')
-		});
-		
-		socket.on('update movement', function(data, room){
-			socket.to(room).emit('update position', data);
-		});
-		
-		socket.on('disconnect', function(){
-			socket.to(Object.keys(io.sockets.adapter.rooms)[1]).emit('probe disconnected');
-		});
-		
+	io = require('socket.io')(server);
+
+io.on('connection', function (socket) {
+
+	socket.on('desktop connect', function (data) {
+		socket.join(data.room);
+		console.log('Desktop connected!');
 	});
-	
-	server.listen(8080, function(){
-		console.log('Server Started On Port 8080');
+
+	socket.on('probe connect', function (data) {
+		socket.join(data.room);
+		socket.to(data.room).emit('probe connected');
+		console.log('Probe connected!');
 	});
+
+	socket.on('update', function (data, room) {
+		socket.to(room).emit('update orientation', data);
+	});
+
+	socket.on('disconnect', function () {
+		// socket.to(Object.keys(io.sockets.adapter.rooms)[1]).emit('probe disconnected');
+		console.log('device disconnected!');
+	});
+
+	socket.on('started sending', () => {
+		socket.to(Object.keys(io.sockets.adapter.rooms)[1]).emit('started sending');
+	});
+
+	socket.on('stopped sending', () => {
+		socket.to(Object.keys(io.sockets.adapter.rooms)[1]).emit('stopped sending');
+	});
+
+});
+
+server.listen(8080, function () {
+	console.log('Server Started On Port 8080');
+});

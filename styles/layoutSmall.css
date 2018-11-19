@@ -1,0 +1,149 @@
+@media screen and (orientation: portrait){
+
+	.body-view{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 40%;
+		overflow: hidden;
+	}
+
+	#bodyView.adjust-width{
+		width: 60%;
+	}
+
+	#viewport {
+		position: absolute;
+		top: 32%;
+		width: 100%;
+		height: 68%;
+		/* overflow: hidden; */
+		background: transparent;
+	}
+
+	#result {
+		position: absolute;
+		background-color: transparent;
+		top: 0;
+		left: 0;
+		height: 32%;
+		padding-left: 10px;
+		overflow: hidden;
+		color: white;
+	}
+
+	#result.show{
+		width: 50%;
+	}
+
+	#result.hide{
+		width: 0;
+	}
+
+	#resultButtons {
+		position: absolute; 
+		bottom: 0;
+		left: 2%; 
+		width: 95%;
+		background: rgb(40, 97, 191, 0.25);
+		transition-property: height, border;
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
+		overflow:hidden;
+	}
+
+	#slicePos{
+		position: absolute;
+		width: 360px; 
+		height: 365px;
+		top: calc(50% - 160px);
+		left: calc(50% - 178px);
+		transform: scale(0.85);
+	}
+
+	#footer {
+		position: absolute; 
+		bottom: 10px; 
+		left: calc(50% - 140px);
+		width: 280px;
+		color: white;
+		text-align: center; 
+		font-size: 10px;
+	}
+}
+
+@media screen and (orientation: landscape){
+
+	.body-view{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	#bodyView.adjust-width{
+		left: 12.5%;
+	}
+
+	#viewport {
+		position: absolute;
+		right: 0;
+		width: 50%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	#result {
+		position: absolute;
+		background-color: transparent;
+		top: 0;
+		left: 0;
+		height: 100%;
+		padding-left: 10px;
+		overflow: hidden;
+		color: white;
+	}
+
+	#result.show{
+		width: 25%;
+	}
+
+	#result.hide{
+		width: 0;
+	}
+
+	#resultButtons {
+		position: absolute; 
+		bottom: 0;
+		left: 2%; 
+		width: 48%;
+		background: rgb(40, 97, 191, 0.25);
+		transition-property: height, border;
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
+		overflow:hidden;
+	}
+
+	#slicePos{
+		position: absolute;
+		width: 360px; 
+		height: 365px;
+		top: calc(50% - 160px);
+		left: calc(50% - 178px);
+		transform: scale(0.7);
+	}
+
+	
+	#footer {
+		position: absolute; 
+		bottom: 10px; 
+		left: 20px;
+		width: 320px; 
+		color: white; 
+		font-size: 10px;
+	}
+}
+
